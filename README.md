@@ -6,7 +6,7 @@ git clone https://github.com/moodle/moodle.git
 
 git checkout MOODLE_405_STABLE
 
-Copy the docker file and compose file in root directory
+Copy the docker file and compose file in root directory (Make sure docker and compose are installed)
 
 Run docker compose up -d
 
