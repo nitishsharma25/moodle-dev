@@ -1,0 +1,25 @@
+services:
+  moodle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    environment: # these are not used currently
+      - MOODLE_DB_HOST=mysql
+      - MOODLE_DB_USER=root
+      - MOODLE_DB_PASSWORD=root
+      - MOODLE_DB_NAME=moodle
+    depends_on:
+      - mysql
+    
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: moodle
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
