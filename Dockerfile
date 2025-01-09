@@ -35,6 +35,6 @@ EXPOSE 80
 
 # Create local directory for moodledata
 # TODO: Use volume here
-RUN mkdir -p /var/moodledata && chown -R www-data:www-data /var/moodledata
+RUN mkdir -p /var/www/moodledata && chown -R www-data:www-data /var/www/moodledata
 
 CMD ["apache2-foreground"]
